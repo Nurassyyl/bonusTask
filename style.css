@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.block {
+    display: flex;
+    align-items: center;
+}
+
+img {
+    width: 133px;
+    height: 200px;
+    margin: 15px;
+    border-radius: 5%;
+    border: solid 1px #000;
+}
+
+select {
+    margin: 25px;
+    width: 100px;
+}
