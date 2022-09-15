@@ -8,7 +8,6 @@ const getData = () => {
 
 getData().then(users => {
     users.forEach(elems => {
-        console.log(elems);
         let realName = "";
         if (elems.realName) {
             realName = elems.realName;
@@ -16,6 +15,21 @@ getData().then(users => {
         let cards = document.createElement('div');
         cards.classList.add("block");
         let photo = "";
+        if (select.options[select.selectedIndex].value !== elems.status && select.options[select.selectedIndex].value == "") {
+                photo = "<img class='image' src= " +
+                    elems.photo +
+                    "  alt=''> <div class='elements'> <h3> Название: " + elems.name + "</h3> " +
+                    " <p> Актеры: " + realName + "</p> " +
+                    " <p> Спиок фильмов: " + elems.movies + " </p> " +
+                    " <p> Статус: " + elems.status + "</p> </div>";
+                cards.innerHTML = photo;
+                header.append(cards);
+        } else {
+            photo = "";
+            cards.innerHTML = photo;
+            header.append(cards);
+        }
+
         select.addEventListener('input', () => {
             if (select.options[select.selectedIndex].value == elems.status && select.options[select.selectedIndex].value == "deceased" ||
                 select.options[select.selectedIndex].value == elems.status && select.options[select.selectedIndex].value == "alive" ||
