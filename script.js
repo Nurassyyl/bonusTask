@@ -15,7 +15,8 @@ getData().then(users => {
         let cards = document.createElement('div');
         cards.classList.add("block");
         let photo = "";
-        if (select.options[select.selectedIndex].value !== elems.status && select.options[select.selectedIndex].value == "") {
+
+        if (select.options[select.selectedIndex].value !== elems.status && select.options[select.selectedIndex].value == "status") {
                 photo = "<img class='image' src= " +
                     elems.photo +
                     "  alt=''> <div class='elements'> <h3> Название: " + elems.name + "</h3> " +
@@ -34,7 +35,8 @@ getData().then(users => {
             if (select.options[select.selectedIndex].value == elems.status && select.options[select.selectedIndex].value == "deceased" ||
                 select.options[select.selectedIndex].value == elems.status && select.options[select.selectedIndex].value == "alive" ||
                 select.options[select.selectedIndex].value == elems.status && select.options[select.selectedIndex].value == "destroyed" ||
-                select.options[select.selectedIndex].value == elems.status && select.options[select.selectedIndex].value == "unknown") {
+                select.options[select.selectedIndex].value == elems.status && select.options[select.selectedIndex].value == "unknown" ||
+                select.options[select.selectedIndex].value == "status") {
                 photo = "<img class='image' src= " +
                     elems.photo +
                     "  alt=''> <div class='elements'> <h3> Название: " + elems.name + "</h3> " +
